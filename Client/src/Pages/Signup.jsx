@@ -1,74 +1,124 @@
-import React from 'react'
-import WelcomePanel from '../components/WelcomePanel'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 const Signup = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    username: '',
+    email: '',
+    phone: '',
+    password: '',
+    role: 'Admin'
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("Signup Data:", formData)
+  }
+
   return (
-    <>
-      <div className='flex justify-between'>
-        {/* left section */}
-        <div className='w-1/2 bg-indigo-50 flex justify-center'>
-          <WelcomePanel />
+    <div className='flex justify-between items-center h-screen bg-[#FFF9F5] px-24 overflow-hidden'>
+      {/* Left Section (Branding & Logo) */}
+      <div className='w-1/2 flex flex-col items-start px-12'>
+        <div className='mb-6'>
+          <h1 className='text-4xl font-bold text-slate-900 tracking-tight'>
+            Welcome <span className='text-blue-600'>Click</span><span className='text-violet-600'>Mart</span>
+          </h1>
+          <p className='text-slate-500 text-sm mt-1'>Smart Shopping, Better Living.</p>
         </div>
+        
+        <div className='mt-4'>
+          <img src={logo} alt="Clickmart Logo" className='w-72 h-72 object-contain' />
+        </div>
+      </div>
 
-        {/* right section */}
-        <div className='w-1/2 bg-indigo-50 flex items-center justify-center'>
-          <div className='bg-white rounded-2xl shadow-2xl p-10 w-[450px]'>
-            <h1 className='font-bold text-4xl text-indigo-600 text-center mb-1'>
-              Create Account
-            </h1>
-            <p className='text-gray-500 font-semibold text-center text-sm mb-6'>
-              Join <span className='text-blue-400'>Click</span><span className='text-indigo-600'>Mart</span> and start shopping today.
-            </p>
-
-            <form action="" className='flex flex-col gap-4'>
+      {/* Right Section (Form Card) */}
+      <div className='w-1/2 flex justify-end'>
+        <div className='bg-white shadow-xl rounded-2xl w-[480px] p-8 border border-slate-100'>
+          <h2 className='text-3xl font-bold text-center text-blue-600 mb-1'>Create Account</h2>
+          <p className='text-center text-slate-400 text-xs mb-6'>Join ClickMart and start shopping today.</p>
+          
+          <form onSubmit={handleSubmit} className='flex flex-col gap-3.5'>
+            <div>
               <input 
                 type="text" 
                 placeholder="Full Name" 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm' 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.fullName}
+                onChange={(e) => setFormData({...formData, fullName: e.target.value})}
               />
+            </div>
+
+            <div>
               <input 
                 type="text" 
                 placeholder="Username" 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm' 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.username}
+                onChange={(e) => setFormData({...formData, username: e.target.value})}
               />
+            </div>
+
+            <div>
               <input 
                 type="email" 
                 placeholder="Email Address" 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm' 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
+            </div>
+
+            <div>
               <input 
-                type="tel" 
+                type="text" 
                 placeholder="Phone Number" 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm' 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.phone}
+                onChange={(e) => setFormData({...formData, phone: e.target.value})}
               />
+            </div>
+
+            <div>
               <input 
                 type="password" 
                 placeholder="Password" 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm' 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.password}
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
+            </div>
+
+            <div>
               <select 
-                className='border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-600 w-full text-sm text-gray-600 bg-white'
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 shadow-xs'
+                value={formData.role}
+                onChange={(e) => setFormData({...formData, role: e.target.value})}
               >
                 <option value="Admin">Admin</option>
                 <option value="Customer">Customer</option>
-                <option value="Seller">Seller</option>
+                <option value="Agency">Agency</option>
               </select>
+            </div>
 
-              <button 
-                type="submit" 
-                className='bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg transition-colors mt-2 shadow-md shadow-indigo-600/20'
-              >
-                Create Account
-              </button>
-            </form>
+            <button 
+              type="submit" 
+              className='w-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold py-3.5 rounded-xl shadow-md shadow-blue-600/20 mt-2 text-sm'
+            >
+              Create Account
+            </button>
+          </form>
 
-            <p className='text-center text-xs text-gray-500 mt-5'>
-              Already have an account? <span className='text-indigo-600 font-semibold cursor-pointer'>Login</span>
-            </p>
-          </div>
+          <p className='text-center text-xs text-slate-500 mt-5'>
+            Already have an account?{' '}
+            <Link to="/login" className='text-blue-600 font-semibold cursor-pointer hover:underline'>
+              Login
+            </Link>
+          </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
