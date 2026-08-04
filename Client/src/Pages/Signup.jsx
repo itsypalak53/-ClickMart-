@@ -32,3 +32,20 @@ const Signup = () => {
           <img src={logo} alt="Clickmart Logo" className='w-72 h-72 object-contain' />
         </div>
       </div>
+
+      {/* Right Section (Form Card) */}
+      <div className='w-1/2 flex justify-end'>
+        <div className='bg-white shadow-xl rounded-2xl w-[480px] p-8 border border-slate-100'>
+          <h2 className='text-3xl font-bold text-center text-blue-600 mb-1'>Create Account</h2>
+          <p className='text-center text-slate-400 text-xs mb-6'>Join ClickMart and start shopping today.</p>
+          
+          <form onSubmit={handleSubmit} className='flex flex-col gap-3.5'>
+            <div>
+              <input 
+                type="text" 
+                placeholder="Full Name" 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.fullName}
+                onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+              />
+            </div>
