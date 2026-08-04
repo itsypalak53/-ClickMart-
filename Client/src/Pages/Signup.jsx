@@ -49,6 +49,7 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, fullName: e.target.value})}
               />
             </div>
+
             <div>
               <input 
                 type="text" 
@@ -58,6 +59,7 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, username: e.target.value})}
               />
             </div>
+
             <div>
               <input 
                 type="email" 
@@ -67,6 +69,7 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
             </div>
+
             <div>
               <input 
                 type="text" 
@@ -76,6 +79,7 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
               />
             </div>
+
             <div>
               <input 
                 type="password" 
@@ -85,6 +89,7 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
             </div>
+
             <div>
               <select 
                 className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 shadow-xs'
@@ -96,6 +101,7 @@ const Signup = () => {
                 <option value="Agency">Agency</option>
               </select>
             </div>
+
             <button 
               type="submit" 
               className='w-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold py-3.5 rounded-xl shadow-md shadow-blue-600/20 mt-2 text-sm'
