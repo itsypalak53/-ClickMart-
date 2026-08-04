@@ -85,3 +85,14 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
             </div>
+            <div>
+              <select 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 shadow-xs'
+                value={formData.role}
+                onChange={(e) => setFormData({...formData, role: e.target.value})}
+              >
+                <option value="Admin">Admin</option>
+                <option value="Customer">Customer</option>
+                <option value="Agency">Agency</option>
+              </select>
+            </div>
