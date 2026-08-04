@@ -47,3 +47,10 @@ const DashboardLayout = () => {
               to="/customer-list" 
               className="p-3 bg-white shadow-xs rounded-xl font-medium hover:bg-blue-50 hover:text-blue-600 transition text-slate-700 text-sm"
             ></Link>
+            Customer List
+            </Link>
+
+            <Link 
+              to="/sales-order" 
+              className="p-3 bg-white shadow-xs rounded-xl font-medium hover:bg-blue-50 hover:text-blue-600 transition text-slate-700 text-sm"
+            ></Link>
