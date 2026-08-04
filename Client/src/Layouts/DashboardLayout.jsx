@@ -59,7 +59,7 @@ const DashboardLayout = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col bg-[#FFF9F5]">
         {/* Top Header / Search Bar Section */}
@@ -77,3 +77,14 @@ const DashboardLayout = () => {
             </div>
           </div>
         </div>
+
+        {/* Dynamic Page Content */}
+        <div className="flex-1 p-8">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default DashboardLayout
