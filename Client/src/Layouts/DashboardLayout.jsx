@@ -17,3 +17,19 @@ const DashboardLayout = () => {
           <div className="flex flex-col gap-2.5">
             <Link 
               to="/dashboard"
+              className="p-3 bg-white shadow-xs rounded-xl font-medium hover:bg-blue-50 hover:text-blue-600 transition text-slate-700 text-sm"
+            >
+              Dashboard
+            </Link>
+            
+            <Link 
+              to="/categories" 
+              className="p-3 bg-white shadow-xs rounded-xl font-medium hover:bg-blue-50 hover:text-blue-600 transition text-slate-700 text-sm"
+            >
+              Categories
+            </Link>
+
+            <Link 
+              to="/products" 
+              className="p-3 bg-white shadow-xs rounded-xl font-medium hover:bg-blue-50 hover:text-blue-600 transition text-slate-700 text-sm"
+            ></Link>
