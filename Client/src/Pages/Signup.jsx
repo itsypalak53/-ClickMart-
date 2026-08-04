@@ -76,3 +76,12 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
               />
             </div>
+            <div>
+              <input 
+                type="password" 
+                placeholder="Password" 
+                className='w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white text-slate-700 placeholder-slate-400 shadow-xs'
+                value={formData.password}
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
+              />
+            </div>
