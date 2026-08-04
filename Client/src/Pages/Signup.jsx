@@ -96,3 +96,24 @@ const Signup = () => {
                 <option value="Agency">Agency</option>
               </select>
             </div>
+            <button 
+              type="submit" 
+              className='w-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold py-3.5 rounded-xl shadow-md shadow-blue-600/20 mt-2 text-sm'
+            >
+              Create Account
+            </button>
+          </form>
+
+          <p className='text-center text-xs text-slate-500 mt-5'>
+            Already have an account?{' '}
+            <Link to="/login" className='text-blue-600 font-semibold cursor-pointer hover:underline'>
+              Login
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Signup
